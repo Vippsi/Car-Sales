@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
@@ -11,24 +12,25 @@ console.log(props)
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} />
+        <Header />
+        <AddedFeatures />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
-        <Total car={props.car} additionalPrice={props.additionalPrice} />
+        <AdditionalFeatures />
+        <Total />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  // console.log(state.car.price)
-  return {
-    additionalPrice: state.additionalPrice,
-    car: state.car,
-    additionalFeatures: state.additionalFeatures
+// const mapStateToProps = state => {
+//   // console.log(state.car.price)
+//   return {
+//     additionalPrice: state.additionalPrice,
+//     car: state.car,
+//     additionalFeatures: state.additionalFeatures
     
-  }
-}
-export default connect(mapStateToProps, {})(App);
+//   }
+// }
+// export default connect(mapStateToProps, {})(App);
+export default App
